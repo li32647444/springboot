@@ -48,6 +48,14 @@ public class GuestController {
     public Guest guestFindOne(@PathVariable("id")Integer id){
         return guestDao.findOne(id);
     }
+    @GetMapping("/sign/{id}")
+    public Boolean sign(@PathVariable("id")Integer id){
+        Guest guest=new Guest();
+        guest.setId(id);
+        guest.setStatus("1");
+        guestDao.save(guest);
+        return true;
+    }
 
     //Put方法时：body选择x-www.form.urlencoded
     @PostMapping("/guestUpdate")
@@ -78,4 +86,5 @@ public class GuestController {
         }
         return flag;
     }
+
 }
