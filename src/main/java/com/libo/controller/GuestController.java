@@ -51,6 +51,7 @@ public class GuestController {
     @GetMapping("/sign/{id}")
     public Boolean sign(@PathVariable("id")Integer id){
         Guest guest=new Guest();
+        guest=guestDao.findOne(id);
         guest.setId(id);
         guest.setStatus("1");
         guestDao.save(guest);
