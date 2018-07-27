@@ -144,7 +144,7 @@ function list() {
 
                 $("tbody>tr").each(function(){
                     var id = $(this).attr("value");
-                    var content ="www.xxx.com?id="+id;//跳转地址
+                    var content ="http://sign.yilu.co/view/guests/"+id;//跳转地址
                     jQuery('#img_'+id).qrcode(utf16to8(content));
                 });
 
